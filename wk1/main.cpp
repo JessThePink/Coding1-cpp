@@ -8,7 +8,7 @@
 #include <iostream>
 using namespace std;
 
-int main() {
+int main() {    
     // '\n' or 'backslash n' makes a new line.
     cout << "\n\n\nAll variables and logic!\n\n\n";
 
