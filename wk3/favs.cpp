@@ -28,7 +28,7 @@ int main() {
         }
        
         else if(input == "add") {
-                cout << "Please add your favorite games: ";
+                cout << "\nPlease add your favorite games: ";
                 getline(cin, input);
 
                 favGames.push_back(input);
@@ -44,6 +44,19 @@ int main() {
                 cout << *iter << endl;
             }
         }
+
+        else if(input == "edit") {
+            cout << "\nHere are your favorite Games:\n";
+            for(vector<string>::iterator iter = favGames.begin(); iter != favGames.end(); iter ++) {
+                cout << *iter << endl;
+            }
+            cout << "\nPlease choose a Game to edit!\n";
+
+            chosenGame = find(favGames.begin(), favGames.end(), input);
+        }
+
+
+
 
         else {
             cout << "I don't recognize that input.\n";
