@@ -95,7 +95,7 @@ public:
     }
 
     // combined get AND set, using the clamping from setCharge.
-    void changeCharge(by amount) {
+    void changeCharge(int amount) {
         setCharge(charge += amount);
     }
 
@@ -160,14 +160,18 @@ int main() {
         turns++;
     
 
-    turns = 0;
-    cout << "Do you want to keep playing?\n";
-    getline(cin, input);
+        turns = 0;
+        cout << "Do you want to keep playing?\n";
+        getline(cin, input);
 
-    if(input == "no") {
-        break;
+        if(input == "no") {
+            break;
+        }
+        artoo.newDay();
     }
-    artoo.newDay();
-}
     return 0;
 }
+
+}
+
+
