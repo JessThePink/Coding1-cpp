@@ -53,6 +53,25 @@ int main() {
             cout << "\nPlease choose a Game to edit!\n";
 
             chosenGame = find(favGames.begin(), favGames.end(), input);
+
+            if(chosenGame != favGames.end()) {
+
+            cout << "Let's edit " << *chosenGame << " today!\n";
+            }
+            else {  
+                cout << "I couldn't find " << input << " in your games.\n";
+            }
+                cout << "Let's change " << *chosenGame << " to something else!\n";
+                cin >> input;
+                *chosenGame = input;
+
+                cout << "New game is now " << *chosenGame << ".\n";
+            
+            else {
+            cout << chapter << " isn't one of the options.\n";
+            }
+
+            
         }
 
 
