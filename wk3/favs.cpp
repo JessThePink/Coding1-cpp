@@ -25,61 +25,86 @@ int main() {
         if(input == "quit") {
             cout << "Thanks for playing.\n";
             break;
-        }
+        } // end of "quit"
        
         else if(input == "add") {
                 cout << "\nPlease add your favorite games: ";
                 getline(cin, input);
 
                 favGames.push_back(input);
-            
-
-            
-            
-        }
+        
+        } // end of "add"
 
         else if(input == "show") {
             cout << "\nHere are your favorite Games:\n";
             for(vector<string>::iterator iter = favGames.begin(); iter != favGames.end(); iter ++) {
                 cout << *iter << endl;
             }
-        }
+        } // end of "show"
 
-        else if(input == "edit") {
-            cout << "\nHere are your favorite Games:\n";
-            for(vector<string>::iterator iter = favGames.begin(); iter != favGames.end(); iter ++) {
-                cout << *iter << endl;
+
+
+
+
+
+        // don't know how to do this
+
+        // else if(input == "edit") {
+        //     cout << "\nHere are your favorite Games:\n";
+        //     for(vector<string>::iterator iter = favGames.begin(); iter != favGames.end(); iter ++) {
+        //         cout << *iter << endl;
+        //     }
+        //     cout << "\nPlease choose a Game to edit!\n";
+
+        //     chosenGame = find(favGames.begin(), favGames.end(), input);
+
+        //     if(chosenGame != favGames.end()) {
+
+        //     cout << "Let's edit " << *chosenGame << " today!\n";
+        //     }
+        //     else {  
+        //         cout << "I couldn't find " << input << " in your games.\n";
+        //     }
+        //         cout << "Let's change " << *chosenGame << " to something else!\n";
+        //         cin >> input;
+        //         *chosenGame = input;
+
+        //         cout << "New game is now " << *chosenGame << ".\n";
+        // } // end of "edit"
+
+
+
+
+        else if(input == "remove") { 
+             favGames.sort(favGames.begin(), favGames.end());
+            for(int i = 0; i < favGames.size(); i++) {
+                cout << favGames[i] << endl;
             }
-            cout << "\nPlease choose a Game to edit!\n";
 
-            chosenGame = find(favGames.begin(), favGames.end(), input);
+           
+            cout << "What game should we remove from favs?\n";
+            string input;
+            cin >> input;
 
-            if(chosenGame != favGames.end()) {
+            auto iter = find(favGames.begin(), favGames.end(), input);
 
-            cout << "Let's edit " << *chosenGame << " today!\n";
+            if(iter != favGames.end()) {
+                cout << "Found it!\n";
+                // remove an element from the vector
+                // at the place the iterator is pointing at. 
+                favGames.erase(iter);
+                
             }
-            else {  
-                cout << "I couldn't find " << input << " in your games.\n";
-            }
-                cout << "Let's change " << *chosenGame << " to something else!\n";
-                cin >> input;
-                *chosenGame = input;
-
-                cout << "New game is now " << *chosenGame << ".\n";
-            
             else {
-            cout << chapter << " isn't one of the options.\n";
+                cout << "I could not find that Game in favs.\n";
             }
-
-            
-        }
-
-
+        
+        } // end of "remove""
+        
 
 
         else {
             cout << "I don't recognize that input.\n";
         }
-
     }
 }
