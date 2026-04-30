@@ -50,16 +50,16 @@ public:
         cout << "I am ";
 
         if(boredom < 5) {
-            cout << "happy";
+            cout << "happy \n";
         }
         else if(boredom < 10) {
-            cout << "bored";
+            cout << "bored \n";
         }
         else if(boredom < 15) {
-            cout << "frustrated";
+            cout << "frustrated \n";
         }
         else {
-            cout << "ENRAGED";
+            cout << "ENRAGED \n";
 
             cout << ".\n\n";
         }
@@ -125,18 +125,18 @@ int main() {
     threepio.setName("C-3P0");      // using setter now
     threepio.setCharge(2);
 
-    cout << "Here's artoo: " << artoo.name << ".\n";
+    cout << "Here's artoo: " << artoo.getName() << ".\n";
 
-    cout << artoo.name << " notices that " << threepio.name;
+    cout << artoo.getName() << " notices that " << threepio.getName();
     cout << " doesn't have much battery left. Let's fix that\n";
 
-    while(threepio.charge < 15) {
-        artoo.charge -=1;           // subtract 1 from charge
-        threepio.charge += 1;       // add 1 to charge
+    while(threepio.getCharge() < 15) {
+        artoo.changeCharge(-1);           // subtract 1 from charge
+        threepio.changeCharge(1);       // add 1 to charge
     }
 
-    cout << "threepio's charge is now " << threepio.charge << ".\n";
-    cout << "artoo's charge is now " << artoo.charge << ".\n";
+    cout << "threepio's charge is now " << threepio.getCharge() << ".\n";
+    cout << "artoo's charge is now " << artoo.getCharge() << ".\n";
 
     // using member functions
     artoo.status();
@@ -151,7 +151,7 @@ int main() {
         getline(cin, input);
 
         if(input == "play") {
-            cout << "Let's play with " << artoo.name << "!\n";
+            cout << "Let's play with " << artoo.getName() << "!\n";
             artoo.play();
         }
         else if(input == "status") {
